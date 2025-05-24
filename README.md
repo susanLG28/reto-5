@@ -13,10 +13,33 @@ Dado la figura de la imagen, desarrolle:
 _solucion_
 
 
-![image](https://github.com/user-attachments/assets/d13bf2fb-28ef-4cab-a8dd-43ee85f249b6)
-![image](https://github.com/user-attachments/assets/76f2d5f9-d33c-4a83-9f42-eb105b06b7ee)
+    import math
 
+    def calcular_rectangulo(base, altura):
+        area = base * altura
+        perimetro = 2*base + 2*altura
+        return area, perimetro
 
+    def calcular_circulos(radio):
+        area = math.pi * radio**2
+        perimetro = (2*radio)*math.pi
+        return area, perimetro
+
+    base= float(input("introduce la base del rectangulo "))
+    altura = float(input("intoduce la altura del rectangulo "))
+    arearectangulo, perimetrorectangulo = calcular_rectangulo(base, altura)
+    print(f"rectangulo - area: {arearectangulo:.2f}, perimetro: {perimetrorectangulo:.2f}")
+
+    radio = float(input("introduce radio de los curculos 6"))
+    areacirculos, perimetrocirculos = calcular_circulos(radio)
+    print(f"circulos - area: {areacirculos:.2f}, perimetro: {perimetrocirculos:.2f}")
+
+    sumaareas = arearectangulo + (areacirculos*2)
+    sumaperimetros = perimetrorectangulo +(perimetrocirculos*2)
+    print(f"la suma de las areas: {sumaareas:.2f}")
+    print(f"la suma de los perimetros: {sumaperimetros:.2f}")
+
+    
 ### punto 2
 Dado la figura de la imagen, desarrolle:
 
@@ -31,17 +54,53 @@ Dado la figura de la imagen, desarrolle:
 _solucion_
 
 
-  ![image](https://github.com/user-attachments/assets/5be97f7f-b7a2-4d42-9ad8-7a372739b256)
-  ![image](https://github.com/user-attachments/assets/0bb00df9-711d-4573-8826-8c3971bbcc95)
+    import math
 
+    def calcular_rectangulo(base, altura):
+        area = base * altura
+        perimetro = 2*base + 2*altura
+        return area, perimetro
+
+    def calcular_circulos(radio):
+        area = math.pi * radio**2
+        perimetro = (2*radio)*math.pi
+        return area, perimetro
+
+    base= float(input("introduce la base del rectangulo "))
+    altura = float(input("intoduce la altura del rectangulo "))
+    arearectangulo, perimetrorectangulo = calcular_rectangulo(base, altura)
+    print(f"rectangulo - area: {arearectangulo:.2f}, perimetro: {perimetrorectangulo:.2f}")
+
+    radio = float(input("introduce radio de los curculos "))
+    areacirculos, perimetrocirculos = calcular_circulos(radio)
+    print(f"circulos - area: {areacirculos:.2f}, perimetro: {perimetrocirculos:.2f}")
+
+    sumaareas = arearectangulo + (areacirculos*2)
+    sumaperimetros = perimetrorectangulo +(perimetrocirculos*2)
+    print(f"la suma de las areas: {sumaareas:.2f}")
+    print(f"la suma de los perimetros: {sumaperimetros:.2f}")
+
+    
 ### punto 3
 Diseñe una función que calcule la cantidad de carne de aves en kilos si se tienen N gallinas, M gallos y K pollitos cada uno pesando 6 kilos, 7 kilos y 1 kilo respectivamente.
 
 _solucion_
 
+    def CalcularCarneAves(n, m, p):
 
-![image](https://github.com/user-attachments/assets/4e41e106-d432-46e6-843f-eec7723569f5)
-![image](https://github.com/user-attachments/assets/455f089d-5663-4eec-9e49-2ee8f342e239)
+        peso_gallinas = n * 6
+        peso_gallos = m * 7
+        peso_pollitos = p * 1
+        total_carne = peso_gallinas + peso_gallos + peso_pollitos
+        return total_carne
+
+    n = int(input("Ingrese la cantidad de gallinas: "))
+    m = int(input("Ingrese la cantidad de gallos: "))
+    p = int(input("Ingrese la cantidad de pollitos: "))
+
+
+    total = CalcularCarneAves(n, m, p)
+    print(f"La cantidad total de carne es: {total} kg")
 
 
 ### punto 4 
@@ -49,9 +108,16 @@ Haga un programa que utilice una función para calcular el valor de un préstamo
 
 _solucion_
 
+    def calcular_prestamo(X, i, n):
+        pago_final = X * (1 + i) ** n
+        return pago_final
 
-![image](https://github.com/user-attachments/assets/f63e597b-c65d-4505-8c30-c6bba8f87af5)
-![image](https://github.com/user-attachments/assets/77cc9379-8406-4c38-9078-161a40fd9a2d)
+    X = float(input("Ingrese el valor del préstamo: "))
+    i = float(input("Ingrese la tasa de interés mensual en decimales: "))
+    n = int(input("Ingrese el número de meses: "))
+
+    monto = calcular_prestamo(X, i, n)
+    print(f"El valor final del préstamo después de {n} meses es: {monto:.2f} pesos")
 
 ### punto 5
 Escriba un programa que pida 5 números reales y calcule las siguientes operaciones usando una función para cada una:
@@ -63,11 +129,43 @@ Escriba un programa que pida 5 números reales y calcule las siguientes operacio
   
 _solucion_
 
-"antes de todo el codigo puse el import math"
 
+    import math
 
-![image](https://github.com/user-attachments/assets/15291752-5196-49d4-ab09-7cf344e35f5e)
-![image](https://github.com/user-attachments/assets/2d7168c6-1a0c-4fc0-96c2-01f24a962367)
+    def calcular_promedio(numeros):
+        return sum(numeros) / len(numeros)
+
+    def calcular_promedio_multiplicativo(numeros):
+        producto = 1
+        for num in numeros:
+            producto *= num
+        return producto ** (1 / len(numeros))
+
+    def potencia_mayor_al_menor(numeros):
+        mayor = max(numeros)
+        menor = min(numeros)
+        return mayor ** menor
+
+    def raiz_cubica_menor(numeros):
+        menor = min(numeros)
+        return menor ** (1/3) if menor >= 0 else -(-menor) ** (1/3)  
+
+    numeros = []
+    print("Ingrese 5 números reales:")
+    for i in range(5):
+        num = float(input(f"Número {i + 1}: "))
+        numeros.append(num)
+
+    promedio = calcular_promedio(numeros)
+    promedio_mult = calcular_promedio_multiplicativo(numeros)
+    potencia = potencia_mayor_al_menor(numeros)
+    raiz_cubica = raiz_cubica_menor(numeros)
+
+    print(f"\nPromedio: {promedio:.3f}")
+    print(f"Promedio multiplicativo: {promedio_mult:.3f}")
+    print(f"Potencia del mayor elevado al menor: {potencia:.3f}")
+    print(f"Raíz cúbica del menor número: {raiz_cubica:.3f}")
+
 
 
 ### punto 6
